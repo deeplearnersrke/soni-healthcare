@@ -40,6 +40,8 @@ jobs:
 
       - name: Build frontend
         run: npm run build
+        env:
+          VITE_APPS_SCRIPT_URL: ${{ secrets.VITE_APPS_SCRIPT_URL }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

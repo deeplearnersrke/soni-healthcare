@@ -36,6 +36,13 @@ VITE_APPS_SCRIPT_URL=https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
 6. Run:
 
 ```bash
+Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue  
+Remove-Item -Force package-lock.json -ErrorAction SilentlyContinue
+npm cache verify
+npm install --omit=optional --no-audit --no-fund
+
+npm install @rollup/rollup-win32-x64-msvc --no-save --no-audit --no-fund
+
 npm install
 npm run dev
 ```
@@ -56,7 +63,7 @@ npm run dev
 
 The Vite `base` path is already set to `/soni-healthcare/`. If you rename the repository, update `frontend/vite.config.js` and the `BASE` constant in `frontend/src/main.jsx` to match the new path.
 
-## Part D — Clinic workflow
+## Part D — Clinic workflow Up 
 
 1. Doctor/admin opens the website and clicks **Doctor Login**.
 2. The authorised issuer enters the admin password.
